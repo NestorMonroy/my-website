@@ -8,9 +8,10 @@ This is website about me, my skills and way to contact with me.
 
 ## Technology used:
 
-* Vanilla JavaScript
+* React
 * SCSS
 * Webpack
+* gsap
 
 ## Description package 
 dependencies: 
