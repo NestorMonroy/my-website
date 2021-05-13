@@ -7,9 +7,11 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "../", "dist"),
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js'
   },
+  //watch: true,
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -84,6 +86,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
+    open: true,
+    historyApiFallback:true,
     port: 8080
   },
 };

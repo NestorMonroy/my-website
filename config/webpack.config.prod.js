@@ -4,14 +4,20 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+//const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/indez.js",
+  entry: "./src/index.js",
   output: {
     filename: "[hash:6]-main.js",
     path: path.resolve(__dirname, "../", "dist"),
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      "@components": path.resolve(__dirname, 'src/components/'),
+    }
   },
   module: {
     rules: [
@@ -53,17 +59,17 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/public/index.html",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new CopyPlugin([
-      {
-        from: "public/images",
-        to: "images",
-      },
-    ]),
+    // new CopyPlugin([
+    //   {
+    //     from: "../public/images",
+    //     to: "images",
+    //   },
+    // ]),
   ],
   optimization: {
     minimize: true,
