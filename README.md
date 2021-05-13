@@ -21,6 +21,7 @@ devDependencies
 - @babel/core: babel en general.
 - @babel/plugin-transform-runtime: permite trabajar con todo el tema de asincronismo como ser async y await.
 - @babel/preset-env: permite usar las ultimas características de JavaScript.
+- @babel/preset-react: permite utilizar react en Webpack
 - babel-loader: permite usar babel con webpack.
 - clean-webpack-plugin: En producción, limpia la carpeta cada vez que hacemos un build
 - copy-webpack-plugin: permite copiar archivos y lanzarlos a la carpeta dist. // no es necesario si se llaman las imagenes desde el Loader.
