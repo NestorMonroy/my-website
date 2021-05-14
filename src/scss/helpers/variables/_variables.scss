@@ -5,19 +5,92 @@ $white: #fafafa;
 // FONT
 $font: "Source Sans Pro", sans-serif;
 
-// BREAKPOINTS
-$mobile-small: 350px;
-$mobile: 600px;
-$tablet: 768px;
-$tablet-big: 1024px;
-$HD: 1360px;
-$FHD: 1920px;
-$QHD: 2560px;
-$UHD: 3840px;
-
 // ANIMATION TIME
 $time: 0.2s;
 $time-short: 0.1s;
 $time-medium: 0.3s;
 $time-long: 0.5s;
 $time-extra-long: 0.8s;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-grid-classes:       true !default;
+
+
+// Size.
+$size: (
+  border-radius:		4px,
+  border-width:		1px,
+  element-height:		3em,
+  element-margin:		2em,
+  gutter:				2.5em,
+  field-gutter:		2em,
+  inner:				68em,
+  menu:				22em
+);
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// // BREAKPOINTS
+// $mobile-small: 350px;
+// $mobile: 600px;
+// $tablet: 768px;
+// $tablet-big: 1024px;
+// $HD: 1360px;
+// $FHD: 1920px;
+// $QHD: 2560px;
+// $UHD: 3840px;
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// ) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  mobile-small: 350px,
+  mobile: 600px,
+  tablet: 768px,
+  tablet-big: 1024px,
+  HD: 1360px,
+  FHD: 1920px,
+  QHD: 2560px,
+  UHD: 3840px,
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px
+// ) !default;
+
+$container-max-widths: (
+  mobile-small: 320px,
+  mobile: 570px,
+  tablet: 730px,
+  tablet-big: 970px,
+  HD: 1330px,
+  FHD: 1890px,
+  QHD: 2500px,
+  UHD: 3800px,
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;

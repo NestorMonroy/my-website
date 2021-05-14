@@ -1,6 +1,6 @@
 const Footer = () => (
-  <div className="footer">
-    <p className="footer-title">Store</p>
+  <div className="footer animation">
+    <p className="footer__title">Store</p>
     <p className="footer-copy">Todos los Izquierdos Reservados</p>
   </div>
 );
