@@ -1,7 +1,11 @@
 const Footer = () => (
-  <div className="footer animation">
-    <p className="footer__title">Store</p>
-    <p className="footer-copy">Todos los Izquierdos Reservados</p>
+  <div className="footer">
+    <div className="container">
+      <div className="copyright">
+          &copy; {new Date().getFullYear()}, made with ❤ by
+          <a href="" target="_blank"> Nestor Monroy</a>
+        </div>
+    </div>
   </div>
 );
 

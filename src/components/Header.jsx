@@ -23,7 +23,7 @@ const Header = ({ history, dimensions }) => {
   return (
     <div className="header">
       <div className="container">
-        <div className="row v-center space-between">
+        <div className="row">
           <div className="logo">
             <NavLink to="/" exact>
               MY INFO

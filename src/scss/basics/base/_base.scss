@@ -1,54 +1,90 @@
 body {
-  display: flex;
-  flex-wrap: wrap;
-  background-color:$white;
+  background-color: $white;
   overflow-x: hidden;
   max-width: 100%;
 
   visibility: hidden;
-  // user-select: none;
+  user-select: none;
   background: $white;
   overscroll-behavior: none;
   margin: 0;
   font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
 }
 
-main,
-footer {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+@include media-breakpoint-up("<=xsmall") {
+  html,
+  body {
+    min-width: 320px;
+  }
 }
 
-strong {
-  font-weight: 600;
+// Set box model to border-box.
+// Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 a {
-  color: $black;
   text-decoration: none;
+  
+  &:focus {
+    outline: none; // remove the terrible @include tab-focus();
+  }
 }
+// a {
+//   &:focus {
+//     outline: none; // remove the terrible @include tab-focus();
+//   }
+// }
 
-hr {
-  border: none;
-  border-left: 2px solid $black;
-  height: 70%;
-  width: 1px;
-}
+// @mixin hover {
+//   &:hover { @content; }
+// }
 
-section {
-  box-sizing: border-box;
-  width: 100%;
-}
+// @mixin hover-focus {
+//   &:hover,
+//   &:focus {
+//     @content;
+//   }
+// }
 
+// @mixin plain-hover-focus {
+//   &,
+//   &:hover,
+//   &:focus {
+//     @content;
+//   }
+// }
 
+// @mixin hover-focus-active {
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     @content;
+//   }
+// }
 
-.App {
-  z-index: 2;
-  transform: translateY(0);
-  position: relative;
-}
+// a:not([href]):not([tabindex]) {
+//   color: inherit;
+//   text-decoration: none;
+
+//   @include hover-focus {
+//     color: inherit;
+//     text-decoration: none;
+//   }
+
+//   &:focus {
+//     outline: 0;
+//   }
+// }

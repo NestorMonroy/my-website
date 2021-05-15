@@ -3,11 +3,9 @@ import { gsap } from "gsap";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./containers/Home";
-import NotFound from "./containers/NotFound";
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
-  { name: "NotFound", Component: NotFound }
 ];
 
 
