@@ -1,6 +1,6 @@
 import React  from "react";
-import IntroOverlay from "../components/IntroOverlay";
-import Banner from "../components/Banner";
+import IntroOverlay from "@components/IntroOverlay";
+import Banner from "@components/Banner";
 import gsap from "gsap";
 
 let tl = gsap.timeline();

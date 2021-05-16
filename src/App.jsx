@@ -1,8 +1,8 @@
 import React from "react";
 import { gsap } from "gsap";
 import { Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./containers/Home";
+import Layout from "@components/Layout";
+import Home from "@pages/Home";
 
 const routes = [{ path: "/", name: "Home", Component: Home }];
 

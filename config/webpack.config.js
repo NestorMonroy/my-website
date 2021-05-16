@@ -1,22 +1,26 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, '../', 'dist'),
-    filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/images/[hash][ext][query]'
+    path: path.resolve(__dirname, "../", "dist"),
+    filename: "[name].[contenthash].js",
+    assetModuleFilename: "assets/images/[hash][ext][query]",
   },
   //watch: true,
-  devtool: 'source-map',
+  devtool: "source-map",
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
+    alias: {
+      "@components": path.resolve(__dirname, "../src/components/"),
+      "@pages": path.resolve(__dirname, "../src/pages/"),
+      "@animations": path.resolve(__dirname, "../src/animations/"),
+    },
   },
   module: {
     rules: [
@@ -24,14 +28,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.html$/,
         use: {
-          loader: 'html-loader'
-        }
+          loader: "html-loader",
+        },
       },
       {
         test: /\.scss$/,
@@ -81,25 +85,25 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: "./src/public/index.html",
-      filename: './index.html'
+      filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: "[name].[contenthash].css",
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../src', "assets/images"),
-          to: "assets/images"
-        }
-      ]
+          from: path.resolve(__dirname, "../src", "assets/images"),
+          to: "assets/images",
+        },
+      ],
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, "dist"),
     compress: true,
     open: true,
-    historyApiFallback:true,
-    port: 8080
+    historyApiFallback: true,
+    port: 8080,
   },
 };

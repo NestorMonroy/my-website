@@ -1,8 +1,8 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -11,11 +11,16 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "../", "dist"),
-    filename: '[name].[contenthash].js',// nombre de la salida
-    assetModuleFilename: 'assets/images/[hash][ext][query]'
+    filename: "[name].[contenthash].js", // nombre de la salida
+    assetModuleFilename: "assets/images/[hash][ext][query]",
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"],
+    alias: {
+      "@components": path.resolve(__dirname, "../src/components/"),
+      "@pages": path.resolve(__dirname, "../src/pages/"),
+      "@animations": path.resolve(__dirname, "../src/animations/"),
+    },
   },
   module: {
     rules: [
@@ -57,26 +62,23 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./src/public/index.html",
-      filename: './index.html'
+      filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].[contenthash].css'
+      filename: "assets/[name].[contenthash].css",
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../src', "assets/images"),
-          to: "assets/images"
-        }
-      ]
+          from: path.resolve(__dirname, "../src", "assets/images"),
+          to: "assets/images",
+        },
+      ],
     }),
     new CleanWebpackPlugin(),
   ],
   optimization: {
     minimize: true,
-    minimizer: [
-      new CssMinimizerWebpackPlugin(),
-      new TerserWebpackPlugin()
-    ]
-  }
+    minimizer: [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()],
+  },
 };

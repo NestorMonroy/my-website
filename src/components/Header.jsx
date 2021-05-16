@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import UpArrow from "../assets/up-arrow-circle.svg";
-import { openMenu, closeMenu } from "../animations/menuAnimations";
+import { openMenu, closeMenu } from "@animations/menuAnimations";
 
 // Define reducer
 
 const Header = ({ history, dimensions }) => {
   const [menuState, setMenuState] = React.useState({ menuOpened: false });
+  
   React.useEffect(() => {
     //Listening for page changes.
     history.listen(() => {
