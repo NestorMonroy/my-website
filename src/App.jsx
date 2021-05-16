@@ -1,13 +1,10 @@
 import React from "react";
 import { gsap } from "gsap";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./containers/Home";
 
-const routes = [
-  { path: "/", name: "Home", Component: Home },
-];
-
+const routes = [{ path: "/", name: "Home", Component: Home }];
 
 function debounce(fn, ms) {
   let timer;
@@ -41,17 +38,16 @@ const App = () => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
   });
-
   return (
-    <BrowserRouter>
-      <Layout>
-        {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
+    <>
+      {routes.map(({ path, Component }) => (
+        <Route key={path} exact path={path}>
+          <Layout dimensions={dimensions}>
             <Component dimensions={dimensions} />
-          </Route>
-        ))}
-      </Layout>
-    </BrowserRouter>
+          </Layout>
+        </Route>
+      ))}
+    </>
   );
 };
 

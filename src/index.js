@@ -1,4 +1,11 @@
 import ReactDOM from 'react-dom';
 import App from './App';
+import { BrowserRouter as Router } from "react-router-dom";
+
 import './scss/style.scss'
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(
+    <Router>
+        <App />
+    </Router>,
+    document.getElementById("app")
+);

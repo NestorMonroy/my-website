@@ -16,19 +16,18 @@ $time-extra-long: 0.8s;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-grid-classes:       true !default;
-
+$enable-grid-classes: true !default;
 
 // Size.
 $size: (
-  border-radius:		4px,
-  border-width:		1px,
-  element-height:		3em,
-  element-margin:		2em,
-  gutter:				2.5em,
-  field-gutter:		2em,
-  inner:				68em,
-  menu:				22em
+  border-radius: 4px,
+  border-width: 1px,
+  element-height: 3em,
+  element-margin: 2em,
+  gutter: 2.5em,
+  field-gutter: 2em,
+  inner: 68em,
+  menu: 22em,
 );
 
 /*
@@ -79,39 +78,49 @@ $size: (
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 460px, // extra small
-  sm: 576px, // small
-  md: 768px, // medium
-  xm: 992px, // extra medium
-  sl: 1115px, // semi large
-  lg: 1200px, // large
-  xl: 1360px, // extra large
-  sg: 1420px, // semi grand
-  gr: 1560px, // grand
-  xg: 1720px, // extra grand
-  hd: 1920px, // hd screens
-  ud: 2560px, // ultra hd screens
-  rt: 3440px
+  xs: 0px,
+  // extra small
+    sm: 576px,
+  // small
+    md: 768px,
+  // medium
+    xm: 992px,
+  // extra medium
+    sl: 1115px,
+  // semi large
+    lg: 1200px,
+  // large
+    xl: 1360px,
+  // extra large
+    sg: 1420px,
+  // semi grand
+    gr: 1560px,
+  // grand
+    xg: 1720px,
+  // extra grand
+    hd: 1920px,
+  // hd screens
+    ud: 2560px,
+  // ultra hd screens
+    rt: 3440px,
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
-
-
 $container-max-widths: (
   sm: 520px,
   md: 680px,
   xm: 824px,
-  sl: 824px,
+  sl: 924px,
   lg: 1240px,
-  xl: 1175px,
+  xl: 1250px,
   sg: 1280px,
   gr: 1380px,
   xg: 1450px,
   hd: 1660px,
   ud: 1800px,
-  rt: 2674px
+  rt: 2674px,
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -120,9 +129,8 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
-
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
 
 //Paddings
 $padding-general-y: 0.625rem !default;

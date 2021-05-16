@@ -31,15 +31,15 @@ const homeAnimation = (completeAnimation) => {
     .to(".intro-overlay", 0, {
       css: { display: "none" },
     })
-    .from(".case-image img", 1.2, {
-      scale: 1.4,
-      ease: "expo.inOut",
-      delay: -1.8,
-      stagger: {
-        amount: 0.2,
-      },
-      onComplete: completeAnimation,
-    });
+    // .from(".case-image img", 1.2, {
+    //   scale: 1.4,
+    //   ease: "expo.inOut",
+    //   delay: -1.8,
+    //   stagger: {
+    //     amount: 0.2,
+    //   },
+    //   onComplete: completeAnimation,
+    // });
 };
 
 const Home = ({ dimensions }) => {
@@ -59,10 +59,10 @@ const Home = ({ dimensions }) => {
   }, [dimensions.width, dimensions.height]);
 
   return (
-    <>
+    <div className="App">
       {animationComplete === false ? <IntroOverlay /> : ""}
       <Banner />
-    </>
+    </div>
   );
 };
 

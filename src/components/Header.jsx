@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { ReactComponent as UpArrow } from "../assets/up-arrow-circle.svg";
+import UpArrow from "../assets/up-arrow-circle.svg";
 import { openMenu, closeMenu } from "../animations/menuAnimations";
 
 // Define reducer
@@ -23,27 +23,25 @@ const Header = ({ history, dimensions }) => {
   return (
     <div className="header">
       <div className="container">
-        <div className="row">
-          <div className="logo">
-            <NavLink to="/" exact>
-              MY INFO
-            </NavLink>
+        <div className="logo">
+          <NavLink to="/" exact>
+            MY INFO
+          </NavLink>
+        </div>
+        <div className="nav-toggle">
+          <div
+            onClick={() => setMenuState({ menuOpened: true })}
+            className="hamburger-menu"
+          >
+            <span></span>
+            <span></span>
           </div>
-          {/* <div className="nav-toggle">
-            <div
-              onClick={() => setMenuState({ menuOpened: true })}
-              className="hamburger-menu"
-            >
-              <span></span>
-              <span></span>
-            </div>
-            <div
-              className="hamburger-menu-close"
-              onClick={() => setMenuState({ menuOpened: false })}
-            >
-              <UpArrow />
-            </div>
-          </div> */}
+          <div
+            className="hamburger-menu-close"
+            onClick={() => setMenuState({ menuOpened: false })}
+          >
+            <img src={UpArrow} alt="" />
+          </div>
         </div>
       </div>
     </div>
