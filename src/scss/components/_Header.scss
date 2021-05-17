@@ -4,7 +4,6 @@
   border-radius: 3px;
   padding: 0.625rem 0;
   margin-bottom: 20px;
-
   position: relative;
   display: flex;
   flex-wrap: wrap; // allow us to do the line break for collapsing content
@@ -40,6 +39,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
     @include media-breakpoint-up("<=tablet") {
       margin-right: 24px;
     }
@@ -49,6 +50,8 @@
     }
 
     .hamburger-menu {
+      //display: inline-flex;
+
       width: 25px;
       span {
         text-align: center;
