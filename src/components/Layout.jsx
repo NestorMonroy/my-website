@@ -1,9 +1,9 @@
-import Header from './Header';
-import Footer from './Footer';
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Layout = ({ children, dimensions }) => (
+const Layout = ({ children }) => (
   <div>
-    <Header dimensions={dimensions} />
+    <Header />
     {children}
     <Footer />
   </div>

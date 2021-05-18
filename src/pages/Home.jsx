@@ -1,6 +1,8 @@
-import React  from "react";
+import React from "react";
 import IntroOverlay from "@components/IntroOverlay";
 import Banner from "@components/Banner";
+import useDimensions from "@hooks/useDimensions";
+
 import gsap from "gsap";
 
 let tl = gsap.timeline();
@@ -30,19 +32,12 @@ const homeAnimation = (completeAnimation) => {
     })
     .to(".intro-overlay", 0, {
       css: { display: "none" },
-    })
-    // .from(".case-image img", 1.2, {
-    //   scale: 1.4,
-    //   ease: "expo.inOut",
-    //   delay: -1.8,
-    //   stagger: {
-    //     amount: 0.2,
-    //   },
-    //   onComplete: completeAnimation,
-    // });
+      //onComplete: completeAnimation,
+    });
 };
 
-const Home = ({ dimensions }) => {
+const Home = (props) => {
+  const dimensions = useDimensions();
   const [animationComplete, setAnimationComplete] = React.useState(false);
 
   const completeAnimation = () => {
@@ -54,12 +49,12 @@ const Home = ({ dimensions }) => {
   }, []);
 
   React.useEffect(() => {
-    let vh = dimensions.height * 0.01;
+    let vh = dimensions.height * 0.01376;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }, [dimensions.width, dimensions.height]);
 
   return (
-    <div className="App">
+    <div>
       {animationComplete === false ? <IntroOverlay /> : ""}
       <Banner />
     </div>

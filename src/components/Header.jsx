@@ -4,11 +4,14 @@ import { withRouter } from "react-router-dom";
 import UpArrow from "../assets/up-arrow-circle.svg";
 import { openMenu, closeMenu } from "@animations/menuAnimations";
 
+import useDimensions from "@hooks/useDimensions";
 // Define reducer
 
-const Header = ({ history, dimensions }) => {
+const Header = (props) => {
+  const dimensions = useDimensions();
+  const { history } = props;
   const [menuState, setMenuState] = React.useState({ menuOpened: false });
-  
+
   React.useEffect(() => {
     //Listening for page changes.
     history.listen(() => {

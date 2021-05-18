@@ -1,7 +1,7 @@
 .main {
   //height: 1000vh; //fallback option
   height: calc(var(--vh, 1vh) * 50);
-  background-color: $white;
+  background-color: pink;
   .row {
     flex-direction: column;
     justify-content: center;
