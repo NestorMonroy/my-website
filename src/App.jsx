@@ -1,10 +1,8 @@
 import React from "react";
 import { gsap } from "gsap";
 import { Route, Switch } from "react-router-dom";
-import Layout from "@components/Layout";
+import Header from "@components/Header";
 import Home from "@pages/Home";
-
-import Navigation from "@components/Navigation";
 
 const App = () => {
   React.useEffect(() => {
@@ -13,12 +11,10 @@ const App = () => {
   });
   return (
     <>
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-        <Navigation />
-      </Layout>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
     </>
   );
 };

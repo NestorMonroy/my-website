@@ -23,9 +23,12 @@ body {
 
 // Set box model to border-box.
 // Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+body,
 html {
   box-sizing: border-box;
   visibility: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 *,
@@ -41,49 +44,3 @@ a {
     outline: none; // remove the terrible @include tab-focus();
   }
 }
-// a {
-//   &:focus {
-//     outline: none; // remove the terrible @include tab-focus();
-//   }
-// }
-
-// @mixin hover {
-//   &:hover { @content; }
-// }
-
-// @mixin hover-focus {
-//   &:hover,
-//   &:focus {
-//     @content;
-//   }
-// }
-
-// @mixin plain-hover-focus {
-//   &,
-//   &:hover,
-//   &:focus {
-//     @content;
-//   }
-// }
-
-// @mixin hover-focus-active {
-//   &:hover,
-//   &:focus,
-//   &:active {
-//     @content;
-//   }
-// }
-
-// a:not([href]):not([tabindex]) {
-//   color: inherit;
-//   text-decoration: none;
-
-//   @include hover-focus {
-//     color: inherit;
-//     text-decoration: none;
-//   }
-
-//   &:focus {
-//     outline: 0;
-//   }
-// }

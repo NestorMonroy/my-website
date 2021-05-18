@@ -1,5 +1,5 @@
 .header {
-  min-height: 10vh;    
+  min-height: 10vh;
   border: 0;
   border-radius: 3px;
   padding: 0.625rem 0;
@@ -39,7 +39,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 
     @include media-breakpoint-up("<=tablet") {
       margin-right: 24px;

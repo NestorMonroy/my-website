@@ -34,9 +34,7 @@ const useDimensions = () => {
     return () => window.removeEventListener("resize", debouncedHandleResize);
   }, []);
 
-  return {
-    dimensions,
-  };
+  return dimensions
 };
 
 export default useDimensions;
