@@ -1,54 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { withRouter } from "react-router-dom";
-import UpArrow from "../assets/up-arrow-circle.svg";
-import { openMenu, closeMenu } from "@animations/menuAnimations";
+import { withRouter, Link } from "react-router-dom";
+import Hamburger from "./Hamburger";
 
-import useDimensions from "@hooks/useDimensions";
-// Define reducer
-
-const Header = (props) => {
-  const dimensions = useDimensions();
-  const { history } = props;
-  const [menuState, setMenuState] = React.useState({ menuOpened: false });
-
-  React.useEffect(() => {
-    //Listening for page changes.
-    history.listen(() => {
-      setMenuState({ menuOpened: false });
-    });
-    if (menuState.menuOpened === true) {
-      openMenu(dimensions.width);
-    } else if (menuState.menuOpened === false) {
-      closeMenu();
-    }
-  });
+const Header = ({ history }) => {
 
   return (
-    <div className="header">
+    <header>
       <div className="container">
-        <div className="logo">
-          <NavLink to="/" exact>
-            MY INFO
-          </NavLink>
-        </div>
-        <div className="nav-toggle">
-          <div
-            onClick={() => setMenuState({ menuOpened: true })}
-            className="hamburger-menu"
-          >
-            <span></span>
-            <span></span>
-          </div>
-          <div
-            className="hamburger-menu-close"
-            onClick={() => setMenuState({ menuOpened: false })}
-          >
-            <img src={UpArrow} alt="" />
+        <div className="wrapper">
+          <div className="inner-header">
+            <div className="logo">
+              <Link to="/">NESTOR MONROY</Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Hamburger/>
+    </header>
   );
 };
+
 export default withRouter(Header);
