@@ -1,21 +1,24 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
+import AnimatedLogo from "./AnimatedLogo";
 import Hamburger from "./Hamburger";
 
-const Header = ({ history }) => {
-
+const Header = () => {
   return (
     <header>
       <div className="container">
         <div className="cover">
           <div className="inner-header">
             <div className="logo">
-              <Link to="/">NESTOR MONROY</Link>
+              <NavLink exact to="/">
+                <AnimatedLogo color="#071626" height="2rem" width="2rem" />
+                {""} NESTOR MONROY
+              </NavLink>
             </div>
           </div>
         </div>
       </div>
-      <Hamburger/>
+      <Hamburger />
     </header>
   );
 };

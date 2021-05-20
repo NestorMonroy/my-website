@@ -33,7 +33,7 @@ header {
     width: 45px;
     border-radius: 100%;
     border: none;
-    background-color: rgb(255, 255, 255);
+    background-color:$white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,10 +45,11 @@ header {
     span {
       height: 3px;
       width: 22px;
-      background-color: rgb(15, 15, 15);
+      background-color: $black;
       border-radius: 5px;
     }
   }
+  
   .hamburger-menu {
     display: none;
     z-index: 9;
@@ -59,8 +60,7 @@ header {
     height: 100%;
     width: 100%;
     .menu-secondary-background-color {
-      
-      background: linear-gradient(-20deg, #121329 0%, #3b0e2a 100%);
+      background: $background-menu;
       top: 0;
       left: 0;
       right: 0;
@@ -112,16 +112,18 @@ header {
                 overflow: hidden;
                 position: relative;
                 width: 700px;
-                @media (min-width: 768px) {
+                @include media-breakpoint-up("<=tablet"){
                   font-size: 6rem;
                   height: 135px;
                 }
+
                 a {
                   position: absolute;
-                  color: #fff;
+                  color: $white;
                   text-decoration: none;
+
                   &:hover {
-                    color: #25629b;
+                    color: $blue-a;
                   }
                 }
               }
@@ -140,232 +142,7 @@ header {
             }
           }
         }
-        .locations {
-          position: absolute;
-          bottom: -80px;
-          color: #fff;
-          margin-top: 16px;
-          font-size: 0.8rem;
-          font-weight: 600;
-          span {
-            cursor: pointer;
-            &:first-child {
-              margin-left: 64px;
-            }
-            font-weight: 400;
-            margin: 0 32px;
-            transition: 0.3s ease-in-out;
-            &:hover {
-              color: #fff;
-              background: $black;
-              padding: 8px 24px;
-              border-radius: 4px;
-            }
-          }
-        }
       }
     }
   }
 }
-
-// header {
-//   height: 100px;
-
-//   .container {
-//     max-width: 1440px;
-//     margin: 0 auto;
-//     .cover {
-//       padding: 0 48px;
-//     }
-//   }
-
-//   .inner-header {
-//     position: relative;
-//     z-index: 10;
-//     height: 100px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     .logo a {
-//       font-weight: 700;
-//       font-size: 1rem;
-//       text-decoration: none;
-//       color: $black;
-//     }
-//   }
-
-//   .button-hamburger {
-//     z-index: 1000;
-//     position: fixed;
-//     top: 25px;
-//     right: 25px;
-//     height: 45px;
-//     width: 45px;
-//     border-radius: 100%;
-//     border: none;
-//     background-color: rgb(255, 255, 255);
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     flex-direction: column;
-//     padding: 14px 0px;
-//     outline: none;
-//     cursor: pointer;
-
-//     span {
-//       height: 3px;
-//       width: 22px;
-//       background-color: rgb(15, 15, 15);
-//       border-radius: 5px;
-//     }
-//   }
-// }
-
-// @keyframes backgroundEffect {
-//   0% {
-//     background-position: 0% 0%;
-//   }
-//   25% {
-//     background-position: 40% 10%;
-//   }
-//   50% {
-//     background-position: 0 10%;
-//   }
-//   75% {
-//     background-position: 10% 40%;
-//   }
-//   100% {
-//     background-position: 0% 0%;
-//   }
-// }
-
-// .hamburger-bar {
-//   height: 3px;
-//   width: 22px;
-//   background-color: rgb(15, 15, 15);
-//   border-radius: 5px;
-// }
-
-.menu-background {
-  z-index: -1;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  border: none;
-  background-color: rgb(15, 15, 15);
-  opacity: 0;
-}
-
-// .menu-position {
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
-
-// .menu-layer {
-//   //color: antiquewhite;
-//   // position: relative;
-//   // // background: url(./assets/gradient.png) no-repeat center center fixed;
-//   // // -webkit-background-size: cover;
-//   // // -moz-background-size: cover;
-//   // // -o-background-size: cover;
-//   // // background-size: cover;
-//   // //background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
-//   // background-image: linear-gradient(-225deg, #5e1a2b 0%, #2580b3 100%);
-//   // height: 100%;
-//   // overflow: hidden;
-//   .menu-city-background {
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-//     opacity: 0;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     animation-name: backgroundEffect;
-//     animation-duration: 30s;
-//     animation-iteration-count: infinite;
-//   }
-//   .wrapper {
-//     position: relative;
-//     .menu-links {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       position: relative;
-//       top: 200px;
-//       nav {
-//         display: block;
-//         ul {
-//           margin: 0;
-//           padding: 0;
-//           li {
-//             list-style: none;
-//             font-size: 3rem;
-//             font-weight: 700;
-//             cursor: pointer;
-//             height: 80px;
-//             overflow: hidden;
-//             position: relative;
-//             width: 700px;
-//             @media (min-width: 768px) {
-//               font-size: 6rem;
-//               height: 135px;
-//             }
-//             a {
-//               position: absolute;
-//               color: #fff;
-//               text-decoration: none;
-//               &:hover {
-//                 color: pink;
-//               }
-//             }
-//           }
-//         }
-//       }
-//       .info {
-//         color: #fff;
-//         width: 300px;
-//         h3 {
-//           font-size: 1.2rem;
-//           margin: 8px auto;
-//         }
-//         p {
-//           margin: 0 auto;
-//           font-size: 0.8rem;
-//         }
-//       }
-//     }
-//     .locations {
-//       position: absolute;
-//       bottom: -80px;
-//       color: #fff;
-//       margin-top: 16px;
-//       font-size: 0.8rem;
-//       font-weight: 600;
-//       span {
-//         cursor: pointer;
-//         &:first-child {
-//           margin-left: 64px;
-//         }
-//         font-weight: 400;
-//         margin: 0 32px;
-//         transition: 0.3s ease-in-out;
-//         &:hover {
-//           color: #fff;
-//           background: red;
-//           padding: 8px 24px;
-//           border-radius: 4px;
-//         }
-//       }
-//     }
-//   }
-// }
