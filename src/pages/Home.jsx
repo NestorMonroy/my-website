@@ -80,19 +80,22 @@ const Home = () => {
         <div className="wraper-content">
           <div className="wraper-content-inner" ref={(el) => (content = el)}>
             <h1>
-              <div className="wraper-content-line">{bio.name}</div>
-
+              <div className="wraper-content-line">
+                <div className="wraper-content-line-inner">{bio.name}</div>
+              </div>
               <div className="wraper-content-line">
                 {bio.info.map((paragraph) => {
                   return (
-                    <div className="hero-content-line-inner" key={paragraph}>
-                      {paragraph}
-                    </div>
+                    <div className="wraper-content-line-inner">{paragraph}</div>
                   );
                 })}
               </div>
-              <div className="wraper-content-line">{bio.love}</div>
-              <div className="wraper-content-line">{bio.always}</div>
+              <div className="wraper-content-line">
+                <div className="wraper-content-line-inner">{bio.love}</div>
+              </div>
+              <div className="wraper-content-line">
+                <div className="wraper-content-line-inner">{bio.always}</div>
+              </div>
             </h1>
           </div>
 
