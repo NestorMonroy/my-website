@@ -1,16 +1,17 @@
 import React from "react";
 import gsap from "gsap";
+import { useSelector } from "react-redux";
 import imageBack from "../assets/images/mosaic-background.jpg";
 import useDimensions from "@hooks/useDimensions";
 import useMousePosition from "@hooks/useMousePosition";
 
 const Home = () => {
   const dimensions = useDimensions();
-  const { x, y } = useMousePosition();
+  const { x } = useMousePosition();
   const isTabletOrMobile = dimensions.width <= 768;
-
   const [tl] = React.useState(gsap.timeline({ delay: 0.8 }));
-
+  const bio = useSelector((state) => state.languageReducer.state.bio);
+  //console.log(bio);
   let app = React.useRef(null);
   let content = React.useRef(null);
 
@@ -18,12 +19,18 @@ const Home = () => {
     const headlineFirst = content.children[0].children[0];
     const headlineSecond = headlineFirst.nextSibling;
     const headlineThird = headlineSecond.nextSibling;
+    const headlineFort = headlineThird.nextSibling;
     const contentP = content.children[1];
 
     tl.to(app, 0, { css: { visibility: "visible" } });
 
     tl.staggerFrom(
-      [headlineFirst.children, headlineSecond.children, headlineThird.children],
+      [
+        headlineFirst.children,
+        headlineSecond.children,
+        headlineThird.children,
+        headlineFort.children,
+      ],
       1,
       {
         y: 44,
@@ -68,37 +75,35 @@ const Home = () => {
     }px)`,
   };
   return (
-    <div className="container">
-      <div className="hero" ref={(el) => (app = el)}>
-        <div className="hero-inner">
-          <div className="hero-content">
-            <div className="hero-content-inner" ref={(el) => (content = el)}>
-              <h1>
-                <div className="hero-content-line">
-                  <div className="hero-content-line-inner">Nestor Monroy</div>
-                </div>
-                <div className="hero-content-line">
-                  <div className="hero-content-line-inner">
-                    - Software Engineer
-                  </div>
-                </div>
-                <div className="hero-content-line">
-                  <div className="hero-content-line-inner">
-                    - Full Stack Developer
-                  </div>
-                </div>
-              </h1>
-            </div>
+    <div className="home" ref={(el) => (app = el)}>
+      <div className="wraper">
+        <div className="wraper-content">
+          <div className="wraper-content-inner" ref={(el) => (content = el)}>
+            <h1>
+              <div className="wraper-content-line">{bio.name}</div>
 
-            <div className="wrap">
-              <div className={"cube"}>
-                <img src={imageBack} alt="" style={first} />
-                <img src={imageBack} alt="" style={second} />
-                <img src={imageBack} alt="" style={third} />
-                <img src={imageBack} alt="" style={fourth} />
-                <img src={imageBack} alt="" style={fifth} />
-                <img src={imageBack} alt="" style={sixth} />
+              <div className="wraper-content-line">
+                {bio.info.map((paragraph) => {
+                  return (
+                    <div className="hero-content-line-inner" key={paragraph}>
+                      {paragraph}
+                    </div>
+                  );
+                })}
               </div>
+              <div className="wraper-content-line">{bio.love}</div>
+              <div className="wraper-content-line">{bio.always}</div>
+            </h1>
+          </div>
+
+          <div className="wraper-content-cube">
+            <div className={"cube"}>
+              <img src={imageBack} alt="" style={first} />
+              <img src={imageBack} alt="" style={second} />
+              <img src={imageBack} alt="" style={third} />
+              <img src={imageBack} alt="" style={fourth} />
+              <img src={imageBack} alt="" style={fifth} />
+              <img src={imageBack} alt="" style={sixth} />
             </div>
           </div>
         </div>

@@ -1,10 +1,13 @@
 export const en = {
   currentLanguage: "english",
-  bio: [
-    "Front-End developer passionate about new technologies and digital content creation.",
-    "Over the years, I have developed strong skills in web development, photography, and graphic design. After completing a Full-Stack Web Development Diploma, I have acquired a full-scope understanding of the development process, and I am more passionate than ever about frontend development.",
-    "Here, you will find the collection of my best work under different categories: Web Development, Photography, and Design.",
-  ],
+  bio: {
+    name: "Nestor Monroy",
+    info: [
+      "Full Stack Developer passionate about new technologies and digital content creation.",
+    ],
+    love:"I love to make an attractive UI and efficient code.",
+    always:"Always seeking to developing and sharpen my skillsets."
+  },
   webDevelopment: {
     title: "Web development",
     content: [
