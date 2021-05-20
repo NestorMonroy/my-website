@@ -1,51 +1,5 @@
 import gsap from "gsap";
 
-let tl = gsap.timeline();
-
-export const openMenu = (width) => {
-  // tl.to("nav", 0, {
-  //   css: { display: "block" },
-  // })
-  tl.to("body", 0, { css: { overflow: "hidden" } })
-    .to(".main", 1, {
-      //x: width <= 654 ? "-70vh" : -(window.innerHeight / 2),
-      x: -window.innerHeight,
-      ease: "expo.inOut",
-    })
-    .to(".hamburger-menu span", 0.6, {
-      delay: -1,
-      scaleX: 0,
-      transformOrigin: "50% 0%",
-      ease: "expo.inOut",
-    })
-    .to(".hamburger-menu-close", 0.6, {
-      delay: -0.8,
-      css: { display: "block" },
-    });
-};
-
-export const closeMenu = () => {
-  // tl.to(".main", 1, {
-  //   x: 0,
-  //   ease: "expo.inOut",
-  // })
-  tl.to(".hamburger-menu span", 0.6, {
-    delay: -0.6,
-    scaleX: 1,
-    transformOrigin: "50% 0%",
-    ease: "expo.inOut",
-  })
-    .to(".hamburger-menu-close", 0, {
-      delay: -0.1,
-      //x:-10,
-      css: { display: "none" },
-    })
-    .to("body", 0, { css: { overflow: "auto" } });
-  // .to("nav", 0, {
-  //   css: { display: "none" },
-  // });
-};
-
 // OPEN MENU
 export const staggerReveal = (node1, node2) => {
   gsap.from([node1, node2], {
@@ -85,17 +39,6 @@ export const staggerText = (node1, node2, node3) => {
   });
 };
 
-// Fade up for the additonal info on our menu
-export const fadeInUp = (node) => {
-  gsap.from(node, {
-    y: 60,
-    duration: 1,
-    delay: 0.2,
-    opacity: 0,
-    ease: "power3.inOut",
-  });
-};
-
 // Hover on the link
 export const handleHover = (e) => {
   gsap.to(e.target, {
@@ -116,33 +59,3 @@ export const handleHoverExit = (e) => {
   });
 };
 
-// adds city image once you hover on
-export const handleCity = (city, target) => {
-  gsap.to(target, {
-    duration: 0,
-    background: `url(${city}) center center`,
-  });
-  gsap.to(target, {
-    duration: 0.4,
-    opacity: 1,
-    ease: "power3.inOut",
-  });
-  gsap.from(target, {
-    duration: 0.4,
-    skewY: 2,
-    transformOrigin: "right top",
-  });
-};
-
-// Removes the city image once you hover off
-export const handleCityReturn = (target) => {
-  gsap.to(target, {
-    duration: 0,
-    skewY: 0,
-  });
-  gsap.to(target, {
-    duration: 0.4,
-    opacity: 0,
-    skewY: 0,
-  });
-};
