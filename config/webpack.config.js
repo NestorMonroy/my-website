@@ -105,6 +105,6 @@ module.exports = {
     compress: true,
     open: true,
     historyApiFallback: true,
-    port: 8080,
+    port: 3001,
   },
 };

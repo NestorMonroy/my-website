@@ -7,7 +7,7 @@ const Header = ({ history }) => {
   return (
     <header>
       <div className="container">
-        <div className="wrapper">
+        <div className="cover">
           <div className="inner-header">
             <div className="logo">
               <Link to="/">NESTOR MONROY</Link>
