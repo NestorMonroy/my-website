@@ -198,7 +198,7 @@ const Hamburger = () => {
                         onMouseOut={(e) => handleHoverExit(e)}
                         onClick={closeMenu}
                         ref={(el) => (menuItem3 = el)}
-                        to="/contact-us"
+                        to="/contact"
                       >
                         {menu[2]}
                       </NavLink>

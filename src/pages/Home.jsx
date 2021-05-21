@@ -86,7 +86,9 @@ const Home = () => {
               <div className="wraper-content-line">
                 {bio.info.map((paragraph) => {
                   return (
-                    <div className="wraper-content-line-inner">{paragraph}</div>
+                    <div className="wraper-content-line-inner" key={paragraph}>
+                      {paragraph}
+                    </div>
                   );
                 })}
               </div>

@@ -33,7 +33,7 @@ header {
     width: 45px;
     border-radius: 100%;
     border: none;
-    background-color:$white;
+    background-color: $white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +49,7 @@ header {
       border-radius: 5px;
     }
   }
-  
+
   .hamburger-menu {
     display: none;
     z-index: 9;
@@ -112,9 +112,11 @@ header {
                 overflow: hidden;
                 position: relative;
                 width: 700px;
-                @include media-breakpoint-up("<=tablet"){
+
+                @media (min-width: 768px) {
                   font-size: 6rem;
                   height: 135px;
+                  //background-color: sienna
                 }
 
                 a {
