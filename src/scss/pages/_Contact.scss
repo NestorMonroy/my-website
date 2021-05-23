@@ -10,45 +10,38 @@
   //   left: 90%;
   // }
   @include media-breakpoint-up("=>xg") {
-    top: 100vh;
-    left: 80%;
-    background-color: crimson;
+    top: 95vh;
+    left: 90%;
   }
 
   @include media-breakpoint-down("sm") {
-    top: 100vh;
+    top: 95vh;
     left: 80%;
-    background-color: rgb(37, 9, 15);
   }
-
 }
 
 .form-wrapper {
-  background-color: rgb(156, 179, 166);
   font-weight: $fontWeight;
   font-size: 20px;
   color: $text;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  //position: 0;
-  // width: 0;
-  // height: 0;
-  //top: 0;
-  // right: 0;
-  // margin-top: 80px;
-  // position: relative;
-  // display: flex;
-  // flex-wrap: wrap;
-  // flex-direction: column;
-  // align-items: center;
-  // text-align: center;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+  @include media-breakpoint-down("md") {
+    font-size: 15px;
+  }
   .main {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 60%;
     //margin: 12vh 2vw 2vw 2vw;
+    @include media-breakpoint-down("md") {
+      margin-top: 0.5px;
+      padding: 0;
+      width: 100%;
+    }
   }
   .contact-form {
     //max-width: ${CONTACT_CONSTANTS.formMaxWidth};
@@ -105,17 +98,20 @@
       }
     }
     button {
-      background-color: pink;
+      background-color: $blue-a;
       font-family: canada-type-gibson, sans-serif;
       font-weight: 300;
       font-size: 14pt;
-      color: black;
+      color: $black;
       border: none;
       text-transform: uppercase;
       font-weight: 900;
       margin: 4px 0px 0px 0px;
+      padding: 25px 42px;
+      border-radius: 12px;
+
       &:disabled {
-        color: grey;
+        background-color: transparent;
       }
       &:hover:not([disabled]) {
         cursor: pointer;
@@ -173,26 +169,20 @@
 }
 
 .contact-wraper {
-  //margin-top: 80px;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  position: relative;
-  display: flex;
-  background-color: slateblue;
-
   font-weight: $fontWeight;
   font-size: 20px;
   color: $text;
-  //margin: 0;
-
   @include media-breakpoint-down("md") {
-    background-color: aqua;
     font-size: 15px;
     margin-top: 1px;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    position: relative;
+    display: flex;
   }
 
   .contact-wraper-top {
@@ -203,9 +193,26 @@
     width: 60%;
     box-sizing: border-box;
 
+    .title {
+      margin-top: 0;
+      // font-weight: ${TXT_CONSTANTS.fontWeightTitle};
+      text-transform: uppercase;
+      // font-size: ${TXT_CONSTANTS.fontWeightStrong};
+    }
+    p {
+      //text-align: center;
+    }
+    .object-strong {
+      //margin-top: 35px;
+      margin-bottom: 10px;
+      // font-weight: ${TXT_CONSTANTS.fontWeightStrong};
+      // font-size: ${TXT_CONSTANTS.fontSizeStrong};
+    }
+
     .about-detail {
       line-height: 23px;
     }
+
     @include media-breakpoint-down("md") {
       margin-top: 0.5px;
       padding: 0;
@@ -221,24 +228,20 @@
 
   .contact-wraper-bottom {
     font-weight: $fontWeight;
-    font-size: 20px;
+    width: 60%;
+    padding-left: 20px;
     color: $text;
-    //background-color: chocolate;
 
     .object-select {
       text-transform: uppercase;
       font-weight: $fontWeight;
       font-size: 20px;
       color: $text;
-
-      //background-color: seagreen;
-      //margin: 0;
-    }
-    @include media-breakpoint-down("md") {
-      background-color: cornflowerblue;
-      font-size: 15px;
-      //margin-top: 1px;
-      justify-content: space-between;
+      @include media-breakpoint-down("md") {
+        //margin-top: 0.5rem;
+        font-size: 15px;
+        padding-left: 2px;
+      }
     }
   }
 
@@ -313,6 +316,10 @@
   font-weight: $fontWeight;
   font-size: 20px;
   color: $text;
+  @include media-breakpoint-down("md") {
+    margin-top: 0.5rem;
+    font-size: 15px;
+  }
 }
 
 /* checked state */

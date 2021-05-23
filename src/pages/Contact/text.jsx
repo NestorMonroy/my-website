@@ -14,12 +14,12 @@ const Text = () => {
     <>
       <div className="contact-wraper">
         <div className="contact-wraper-top">
-          <div className="about-detail">Contact</div>
-          <div className="about-detail">
+          <div className="title">Contact</div>
+          <p>
             Feel free to contact me for business, fun, or anything else! Use the
             form or contact me on my social medias bellow.
-          </div>
-          <div>Connect with Nestor:</div>
+          </p>
+          <div className='object-strong'>Connect with Nestor:</div>
         </div>
         <div className="contact-wraper-bottom">
           <div className="object-select">Select an object*</div>

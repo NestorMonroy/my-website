@@ -137,7 +137,6 @@ const Contact = () => {
               value="send"
               disabled={!name || !email.includes("@") || !message}
               variant="contained"
-              color="primary"
               onClick={handleClick}
             />
           </form>
