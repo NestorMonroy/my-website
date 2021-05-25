@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SiGmail, SiInstagram } from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 
