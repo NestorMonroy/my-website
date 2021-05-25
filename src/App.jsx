@@ -4,6 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import Header from "@components/Header";
 import Home from "@pages/Home";
 import Contact from "@pages/Contact/index";
+import Projects from "@pages/Projects/index";
+
 
 const App = () => {
   React.useEffect(() => {
@@ -15,7 +17,8 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/contact" component={Contact} />        
       </Switch>
     </>
   );
