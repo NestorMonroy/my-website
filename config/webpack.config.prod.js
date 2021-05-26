@@ -11,7 +11,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "../", "dist"),
-    filename: "[name].[contenthash].js", // nombre de la salida
+    filename: "[name].[contenthash].js",
     assetModuleFilename: "assets/images/[hash][ext][query]",
   },
   resolve: {
@@ -81,5 +81,10 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()],
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
 };
